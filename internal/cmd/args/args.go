@@ -4,6 +4,7 @@ import (
 	"flag"
 	"log"
 	"net/url"
+	"strings"
 )
 
 type Args struct {
@@ -21,7 +22,7 @@ func ParseArgs() *Args {
 
 	flag.Parse()
 
-	if strings.Trim(repoUrlStr, " ") == "" {
+	if strings.Trim(*repoUrlStr, " ") == "" {
 		log.Fatal("repoUrl can not be empty")
 	}
 
